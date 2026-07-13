@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bruce's Handyman Services — Manteca</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #152238;
+      --caution: #f0a202;
+      --metal: #d7dde5;
+      --ink: #101820;
+      --muted: #5b6775;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      background: #eef1f5;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+    .mock-badge {
+      position: fixed; right: .75rem; bottom: .75rem; z-index: 30;
+      background: var(--navy); color: #fff;
+      font-size: .65rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; padding: .45rem .65rem; opacity: .9;
+    }
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      align-content: end;
+      padding: 5.5rem 1.25rem 3rem;
+      background:
+        linear-gradient(135deg, rgba(21,34,56,.94), rgba(21,34,56,.72)),
+        url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80") center/cover;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .stripe {
+      position: absolute; left: 0; top: 0; bottom: 0; width: 10px;
+      background: var(--caution);
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+    .nav {
+      position: absolute; top: 0; left: 0; right: 0;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.1rem 1.25rem;
+    }
+    .nav strong {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 1rem;
+      letter-spacing: .02em;
+    }
+    .nav a {
+      background: var(--caution);
+      color: var(--ink);
+      font-weight: 700;
+      font-size: .8rem;
+      padding: .55rem .85rem;
+    }
+    .tag {
+      display: inline-block;
+      background: rgba(240,162,2,.15);
+      border: 1px solid rgba(240,162,2,.5);
+      color: var(--caution);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .35rem .55rem;
+      margin-bottom: .9rem;
+      opacity: 0;
+      animation: up .6s ease .1s forwards;
+    }
+    h1 {
+      font-family: "Archivo Black", sans-serif;
+      font-size: clamp(2.4rem, 10vw, 4rem);
+      line-height: 1;
+      letter-spacing: -.01em;
+      max-width: 12ch;
+      margin-bottom: .9rem;
+      opacity: 0;
+      animation: up .7s ease .25s forwards;
+    }
+    .hero p {
+      max-width: 28rem;
+      color: rgba(255,255,255,.88);
+      margin-bottom: 1.4rem;
+      opacity: 0;
+      animation: up .7s ease .4s forwards;
+    }
+    .actions {
+      display: flex; flex-wrap: wrap; gap: .7rem;
+      opacity: 0;
+      animation: up .7s ease .55s forwards;
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: .85rem 1.1rem;
+      font-weight: 700;
+      border: 0;
+      font-size: .92rem;
+    }
+    .btn-caution { background: var(--caution); color: var(--ink); }
+    .btn-outline { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.4); }
+    section { padding: 3.25rem 1.25rem; max-width: 920px; margin: 0 auto; }
+    h2 {
+      font-family: "Archivo Black", sans-serif;
+      font-size: clamp(1.6rem, 5vw, 2.2rem);
+      margin-bottom: .45rem;
+    }
+    .muted { color: var(--muted); }
+    .jobs {
+      margin-top: 1.5rem;
+      display: grid;
+      gap: .65rem;
+    }
+    @media (min-width: 640px) { .jobs { grid-template-columns: 1fr 1fr; } }
+    .job {
+      background: #fff;
+      padding: 1rem 1.1rem;
+      border-bottom: 3px solid var(--caution);
+      font-weight: 600;
+    }
+    .bundle {
+      background: var(--navy);
+      color: #fff;
+      padding: 3rem 1.25rem;
+      text-align: center;
+    }
+    .bundle h2 { margin-bottom: .5rem; }
+    .bundle p { opacity: .85; max-width: 34rem; margin: 0 auto 1.25rem; }
+    .addr {
+      margin-top: 1.5rem;
+      font-size: .95rem;
+      opacity: .85;
+    }
+    footer {
+      padding: 2rem 1.25rem 3.5rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    @keyframes up {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .55; }
+    }
+  </style>
+</head>
+<body>
+  <div class="mock-badge">Sample mockup</div>
+  <header class="hero">
+    <div class="stripe" aria-hidden="true"></div>
+    <div class="nav">
+      <strong>BRUCE'S HANDYMAN</strong>
+      <a href="tel:2098254748">Call today</a>
+    </div>
+    <span class="tag">Manteca · Since the early ’90s</span>
+    <h1>Fix the list. Keep the house.</h1>
+    <p>General repairs, mounting, outlets, and the odd jobs that never make it to the top of your weekend.</p>
+    <div class="actions">
+      <a class="btn btn-caution" href="tel:2098254748">(209) 825-4748</a>
+      <a class="btn btn-outline" href="#work">What we handle</a>
+    </div>
+  </header>
+
+  <section id="work">
+    <h2>Common calls</h2>
+    <p class="muted">Local handyman work — one number, clear communication.</p>
+    <div class="jobs">
+      <div class="job">TV &amp; shelf mounting</div>
+      <div class="job">Outlet &amp; fixture help</div>
+      <div class="job">Door, trim &amp; hardware</div>
+      <div class="job">Odd-job punch lists</div>
+      <div class="job">Small drywall patches</div>
+      <div class="job">Home readiness repairs</div>
+    </div>
+  </section>
+
+  <section class="bundle">
+    <h2>Same trusted local number</h2>
+    <p>Ask about plumbing + handyman under one roof — fewer contractors, faster answers.</p>
+    <a class="btn btn-caution" href="tel:2098254748">Call (209) 825-4748</a>
+    <div class="addr">322 N Grant Ave, Manteca, CA 95336</div>
+  </section>
+
+  <footer>
+    Bruce's Handyman Services · Sample website mockup for owner review
+  </footer>
+</body>
+</html>

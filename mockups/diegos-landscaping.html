@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diego's Landscaping — Manteca</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --soil: #2c2118;
+      --olive: #3f5a3a;
+      --leaf: #7fa36a;
+      --sand: #e8dfd0;
+      --sun: #e3a54a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Outfit, system-ui, sans-serif;
+      background: var(--sand);
+      color: var(--soil);
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+    .mock-badge {
+      position: fixed; right: .75rem; bottom: .75rem; z-index: 30;
+      background: var(--soil); color: var(--sand);
+      font-size: .65rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; padding: .45rem .65rem; opacity: .9;
+    }
+    .hero {
+      min-height: 100svh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.25rem 1.25rem 3rem;
+      color: #fff;
+      overflow: hidden;
+      background:
+        linear-gradient(to top, rgba(44,33,24,.92) 12%, rgba(44,33,24,.35) 55%, rgba(63,90,58,.2) 100%),
+        url("https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1600&q=80") center/cover;
+    }
+    .hero-top {
+      position: absolute; top: 0; left: 0; right: 0;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.1rem 1.25rem;
+    }
+    .logo {
+      font-weight: 800;
+      letter-spacing: -.02em;
+      font-size: 1.05rem;
+    }
+    .logo span { color: var(--leaf); }
+    .hero-top a {
+      background: var(--sun);
+      color: var(--soil);
+      font-weight: 700;
+      font-size: .8rem;
+      padding: .55rem .85rem;
+    }
+    .kicker {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--leaf);
+      margin-bottom: .75rem;
+      opacity: 0;
+      animation: fadeup .7s ease .1s forwards;
+    }
+    h1 {
+      font-size: clamp(2.8rem, 11vw, 4.6rem);
+      line-height: .95;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      max-width: 12ch;
+      margin-bottom: .85rem;
+      opacity: 0;
+      animation: fadeup .8s ease .25s forwards;
+    }
+    h1 em {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--sand);
+    }
+    .hero > p {
+      max-width: 28rem;
+      color: rgba(255,255,255,.88);
+      margin-bottom: 1.4rem;
+      opacity: 0;
+      animation: fadeup .8s ease .4s forwards;
+    }
+    .actions {
+      display: flex; flex-wrap: wrap; gap: .7rem;
+      opacity: 0;
+      animation: fadeup .8s ease .55s forwards;
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: .9rem 1.15rem;
+      font-weight: 700;
+      font-size: .92rem;
+      border: 0;
+    }
+    .btn-sun { background: var(--sun); color: var(--soil); }
+    .btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.4); }
+    section { padding: 3.25rem 1.25rem; max-width: 960px; margin: 0 auto; }
+    h2 {
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -.02em;
+      margin-bottom: .5rem;
+    }
+    .lead { color: #6a5d50; max-width: 34rem; }
+    .grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.75rem;
+    }
+    @media (min-width: 700px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+    .card-ish {
+      background: #fff;
+      padding: 1.25rem;
+      border-left: 4px solid var(--olive);
+      transform: translateY(10px);
+      opacity: 0;
+      animation: fadeup .6s ease forwards;
+    }
+    .card-ish:nth-child(2) { animation-delay: .12s; }
+    .card-ish:nth-child(3) { animation-delay: .24s; }
+    .card-ish h3 { font-size: 1.15rem; margin-bottom: .35rem; }
+    .card-ish p { color: #6a5d50; font-size: .95rem; }
+    .quote-panel {
+      background: var(--olive);
+      color: #fff;
+      padding: 3.25rem 1.25rem;
+    }
+    .quote-panel .wrap { max-width: 560px; margin: 0 auto; }
+    .quote-panel h2 { margin-bottom: .5rem; }
+    .quote-panel p { opacity: .88; margin-bottom: 1.25rem; }
+    form { display: grid; gap: .7rem; }
+    input, textarea {
+      width: 100%;
+      padding: .85rem 1rem;
+      border: 0;
+      background: rgba(255,255,255,.12);
+      color: #fff;
+      font: inherit;
+    }
+    input::placeholder, textarea::placeholder { color: rgba(255,255,255,.55); }
+    footer {
+      padding: 2rem 1.25rem 3.5rem;
+      text-align: center;
+      color: #6a5d50;
+      font-size: .85rem;
+    }
+    @keyframes fadeup {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="mock-badge">Sample mockup</div>
+  <header class="hero">
+    <div class="hero-top">
+      <div class="logo">Diego's <span>Landscaping</span></div>
+      <a href="tel:2098248018">Free estimate</a>
+    </div>
+    <p class="kicker">Manteca · Cleanups · Mowing · Sprinklers</p>
+    <h1>Yards that look <em>cared for</em>.</h1>
+    <p>Clean-ups, hauling, sprinkler work, and weekly mowing — local crews you can actually reach by phone.</p>
+    <div class="actions">
+      <a class="btn btn-sun" href="tel:2098248018">Call (209) 824-8018</a>
+      <a class="btn btn-ghost" href="#services">Our services</a>
+    </div>
+  </header>
+
+  <section id="services">
+    <h2>Outdoor work done right</h2>
+    <p class="lead">One call for the jobs that pile up — from overgrown cleanups to keeping the lawn sharp every week.</p>
+    <div class="grid">
+      <article class="card-ish">
+        <h3>Clean-ups &amp; hauling</h3>
+        <p>Debris, brush, and dump runs so your property looks ready again.</p>
+      </article>
+      <article class="card-ish">
+        <h3>Mowing &amp; maintenance</h3>
+        <p>Reliable weekly service for homes that want a clean edge.</p>
+      </article>
+      <article class="card-ish">
+        <h3>Sprinklers</h3>
+        <p>Repairs and adjustments that keep water where the plants need it.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="quote-panel" id="quote">
+    <div class="wrap">
+      <h2>Request a free estimate</h2>
+      <p>Tell us your address and what you need. We’ll call you back.</p>
+      <form onsubmit="event.preventDefault(); alert('Sample mockup — connect this form to phone/SMS when live.');">
+        <input name="name" placeholder="Name" required />
+        <input name="phone" type="tel" placeholder="Phone" required />
+        <input name="city" placeholder="City (Manteca, Lathrop…)" />
+        <textarea name="job" rows="4" placeholder="Cleanup, mowing, sprinklers…"></textarea>
+        <button class="btn btn-sun" type="submit">Send request</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    Diego's Landscaping · Manteca, CA · (209) 824-8018<br />
+    Sample website mockup for owner review
+  </footer>
+</body>
+</html>

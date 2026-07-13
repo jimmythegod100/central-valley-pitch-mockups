@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Call-first pitch mockups — Modesto &amp; Manteca</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f1419;
+      --panel: #1a222c;
+      --text: #e8edf2;
+      --mute: #93a0ae;
+      --accent: #3ecf8e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "DM Sans", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 1.5rem 1.15rem 3rem;
+    }
+    h1 {
+      font-family: Newsreader, Georgia, serif;
+      font-size: clamp(1.9rem, 6vw, 2.6rem);
+      font-weight: 600;
+      margin-bottom: .5rem;
+    }
+    .lead { color: var(--mute); max-width: 40rem; margin-bottom: 1.5rem; }
+    .tips {
+      background: var(--panel);
+      padding: 1rem 1.1rem;
+      margin-bottom: 1.75rem;
+      border-left: 3px solid var(--accent);
+      color: var(--mute);
+      font-size: .95rem;
+    }
+    .tips strong { color: var(--text); }
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+    @media (min-width: 720px) { .grid { grid-template-columns: 1fr 1fr; } }
+    a.card {
+      display: block;
+      background: var(--panel);
+      padding: 1.15rem 1.2rem;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid transparent;
+      transition: border-color .2s ease, transform .2s ease;
+    }
+    a.card:hover {
+      border-color: rgba(62,207,142,.45);
+      transform: translateY(-2px);
+    }
+    .num {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .35rem;
+    }
+    a.card h2 {
+      font-size: 1.15rem;
+      margin-bottom: .35rem;
+    }
+    a.card p { color: var(--mute); font-size: .92rem; }
+    .phone {
+      margin-top: .7rem;
+      font-weight: 600;
+      font-size: .9rem;
+    }
+    footer {
+      margin-top: 2rem;
+      color: var(--mute);
+      font-size: .85rem;
+    }
+    footer a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <h1>Six call-first mockups</h1>
+  <p class="lead">Open each sample on your phone before the visit. Lead with the gap (broken site, Facebook-only, no site), then show the mock.</p>
+  <div class="tips">
+    <strong>How to present:</strong> “I mocked up what a simple site for you could look like — want to see it for 30 seconds?” Then scroll the hero and the quote form. Full scripts are in <code>PITCHES.md</code>.
+  </div>
+  <div class="grid">
+    <a class="card" href="mockups/margos-logos.html">
+      <div class="num">01 · Broken site</div>
+      <h2>Margo's Logos</h2>
+      <p>Embroidery shop — their listed domain currently errors out.</p>
+      <div class="phone">(209) 571-3413</div>
+    </a>
+    <a class="card" href="mockups/sole-saver.html">
+      <div class="num">02 · Facebook only</div>
+      <h2>Sole Saver Boot &amp; Shoe Repair</h2>
+      <p>30+ year Ceres cobbler with no owned website.</p>
+      <div class="phone">(209) 531-1649</div>
+    </a>
+    <a class="card" href="mockups/diegos-landscaping.html">
+      <div class="num">03 · Parked domain</div>
+      <h2>Diego's Landscaping</h2>
+      <p>Manteca lawn/cleanup — domain parks; Bulletin listing only.</p>
+      <div class="phone">(209) 824-8018</div>
+    </a>
+    <a class="card" href="mockups/bruces-handyman.html">
+      <div class="num">04 · No site</div>
+      <h2>Bruce's Handyman</h2>
+      <p>Local punch-list repairs — pair with plumbing pitch.</p>
+      <div class="phone">(209) 825-4748</div>
+    </a>
+    <a class="card" href="mockups/bruces-plumbing.html">
+      <div class="num">05 · No site</div>
+      <h2>Bruce's Plumbing</h2>
+      <p>Licensed since 1992 — trust badges + drain CTA.</p>
+      <div class="phone">(209) 825-4748</div>
+    </a>
+    <a class="card" href="mockups/time-traveler.html">
+      <div class="num">06 · No site</div>
+      <h2>The Time Traveler</h2>
+      <p>Modesto clock repair — appointment request form.</p>
+      <div class="phone">(209) 527-1526</div>
+    </a>
+  </div>
+  <footer>
+    Pitch scripts: <a href="PITCHES.md">PITCHES.md</a> · Built for walk-in / call outreach in Modesto &amp; Manteca
+  </footer>
+</body>
+</html>

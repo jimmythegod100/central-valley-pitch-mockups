@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bruce's Plumbing — Manteca</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --deep: #0b1c28;
+      --pipe: #8ea0ad;
+      --water: #2f9ec8;
+      --foam: #f2f7fa;
+      --ink: #102030;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      background: var(--foam);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+    .mock-badge {
+      position: fixed; right: .75rem; bottom: .75rem; z-index: 30;
+      background: var(--deep); color: #fff;
+      font-size: .65rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; padding: .45rem .65rem; opacity: .9;
+    }
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.25rem 1.25rem 3rem;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(11,28,40,.35), rgba(11,28,40,.92)),
+        url("https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1600&q=80") center/cover;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: -20%;
+      bottom: -30%;
+      width: 140%;
+      height: 55%;
+      background: radial-gradient(ellipse at center, rgba(47,158,200,.35), transparent 65%);
+      animation: ripple 6s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .bar {
+      position: absolute; top: 0; left: 0; right: 0;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.1rem 1.25rem;
+      z-index: 2;
+    }
+    .bar strong {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      letter-spacing: -.02em;
+    }
+    .bar a {
+      background: var(--water);
+      color: #fff;
+      font-weight: 700;
+      font-size: .8rem;
+      padding: .55rem .85rem;
+    }
+    .content { position: relative; z-index: 2; max-width: 38rem; }
+    .badge {
+      display: inline-block;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #9fd7ec;
+      margin-bottom: .75rem;
+      opacity: 0;
+      animation: rise .65s ease .1s forwards;
+    }
+    h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.6rem, 11vw, 4.2rem);
+      line-height: .98;
+      font-weight: 700;
+      letter-spacing: -.03em;
+      margin-bottom: .85rem;
+      opacity: 0;
+      animation: rise .75s ease .25s forwards;
+    }
+    .content > p {
+      color: rgba(255,255,255,.88);
+      margin-bottom: 1.35rem;
+      max-width: 28rem;
+      opacity: 0;
+      animation: rise .75s ease .4s forwards;
+    }
+    .actions {
+      display: flex; flex-wrap: wrap; gap: .7rem;
+      opacity: 0;
+      animation: rise .75s ease .55s forwards;
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: .85rem 1.15rem;
+      font-weight: 700;
+      border: 0;
+      font-size: .92rem;
+    }
+    .btn-water { background: var(--water); color: #fff; }
+    .btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.4); }
+    section { padding: 3.25rem 1.25rem; max-width: 920px; margin: 0 auto; }
+    h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.7rem, 5vw, 2.3rem);
+      letter-spacing: -.02em;
+      margin-bottom: .45rem;
+    }
+    .muted { color: #5d6d7a; }
+    .trust {
+      display: flex; flex-wrap: wrap; gap: .6rem;
+      margin: 1.25rem 0 1.75rem;
+    }
+    .chip {
+      background: #fff;
+      border: 1px solid #d5e0e8;
+      padding: .45rem .7rem;
+      font-size: .85rem;
+      font-weight: 600;
+    }
+    .services {
+      display: grid;
+      gap: 1rem;
+    }
+    @media (min-width: 700px) { .services { grid-template-columns: 1fr 1fr; } }
+    .svc {
+      background: #fff;
+      padding: 1.25rem;
+      border-top: 3px solid var(--water);
+    }
+    .svc h3 {
+      font-family: "Space Grotesk", sans-serif;
+      margin-bottom: .3rem;
+    }
+    .cta {
+      background: var(--deep);
+      color: #fff;
+      padding: 3rem 1.25rem;
+      text-align: center;
+    }
+    .cta h2 { margin-bottom: .5rem; }
+    .cta p { opacity: .85; margin-bottom: 1.2rem; }
+    .cta small { display: block; margin-top: 1rem; opacity: .7; }
+    footer {
+      padding: 2rem 1.25rem 3.5rem;
+      text-align: center;
+      color: #5d6d7a;
+      font-size: .85rem;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes ripple {
+      0%, 100% { transform: translateY(0) scale(1); opacity: .7; }
+      50% { transform: translateY(-12px) scale(1.04); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="mock-badge">Sample mockup</div>
+  <header class="hero">
+    <div class="bar">
+      <strong>Bruce's Plumbing</strong>
+      <a href="tel:2098254748">Drain emergency?</a>
+    </div>
+    <div class="content">
+      <p class="badge">Manteca only · Lic #940067 · Since 1992</p>
+      <h1>General service &amp; drain cleaning.</h1>
+      <p>Local plumbing you can call without a call center. Clear answers, honest work, Manteca-focused service.</p>
+      <div class="actions">
+        <a class="btn btn-water" href="tel:2098254748">(209) 825-4748</a>
+        <a class="btn btn-ghost" href="#services">Services</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="services">
+    <h2>When water misbehaves</h2>
+    <p class="muted">Fast help for the problems that can’t wait — and scheduled work that should be done right.</p>
+    <div class="trust">
+      <span class="chip">Lic #940067</span>
+      <span class="chip">Since 1992</span>
+      <span class="chip">Manteca only</span>
+    </div>
+    <div class="services">
+      <article class="svc">
+        <h3>Drain cleaning</h3>
+        <p class="muted">Slow sinks, backed-up lines, and recurring clogs.</p>
+      </article>
+      <article class="svc">
+        <h3>General plumbing</h3>
+        <p class="muted">Fixtures, leaks, and everyday service calls.</p>
+      </article>
+      <article class="svc">
+        <h3>Same trusted number</h3>
+        <p class="muted">Ask about handyman support for related home fixes.</p>
+      </article>
+      <article class="svc">
+        <h3>Straightforward quotes</h3>
+        <p class="muted">Call first — we’ll tell you what we can do and when.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Need a plumber in Manteca?</h2>
+    <p>One local number. No runaround.</p>
+    <a class="btn btn-water" href="tel:2098254748">Call (209) 825-4748</a>
+    <small>Sample website mockup for owner review</small>
+  </section>
+
+  <footer>Bruce's Plumbing · Manteca, CA</footer>
+</body>
+</html>

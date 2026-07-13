@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Time Traveler Clock Repair — Modesto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Syne:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --midnight: #12151c;
+      --brass: #b08d57;
+      --ivory: #f4efe6;
+      --smoke: #8a847a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Syne, system-ui, sans-serif;
+      background: var(--ivory);
+      color: var(--midnight);
+      line-height: 1.55;
+    }
+    a { color: inherit; text-decoration: none; }
+    .mock-badge {
+      position: fixed; right: .75rem; bottom: .75rem; z-index: 30;
+      background: var(--midnight); color: var(--ivory);
+      font-size: .65rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; padding: .45rem .65rem; opacity: .9;
+    }
+    .hero {
+      min-height: 100svh;
+      background:
+        radial-gradient(circle at 70% 30%, rgba(176,141,87,.18), transparent 40%),
+        linear-gradient(160deg, #0e1016 0%, #1a1f2b 55%, #0c0e14 100%);
+      color: var(--ivory);
+      display: grid;
+      grid-template-rows: auto 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+    .face {
+      position: absolute;
+      right: -8rem;
+      top: 15%;
+      width: 28rem;
+      height: 28rem;
+      border-radius: 50%;
+      border: 1px solid rgba(176,141,87,.35);
+      box-shadow: inset 0 0 0 18px rgba(176,141,87,.08);
+      animation: tick 12s linear infinite;
+    }
+    .face::before, .face::after {
+      content: "";
+      position: absolute;
+      background: var(--brass);
+      left: 50%;
+      top: 50%;
+      transform-origin: bottom center;
+    }
+    .face::before {
+      width: 2px; height: 7rem;
+      transform: translate(-50%, -100%) rotate(20deg);
+    }
+    .face::after {
+      width: 2px; height: 5rem;
+      transform: translate(-50%, -100%) rotate(110deg);
+      opacity: .7;
+    }
+    .top {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.25rem;
+      position: relative; z-index: 2;
+    }
+    .brand {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
+    .top a {
+      border: 1px solid rgba(176,141,87,.55);
+      color: var(--brass);
+      padding: .5rem .85rem;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .hero-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2rem 1.25rem 3.5rem;
+      position: relative;
+      z-index: 2;
+      max-width: 40rem;
+    }
+    .eyebrow {
+      color: var(--brass);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: .85rem;
+      opacity: 0;
+      animation: fade .7s ease .1s forwards;
+    }
+    h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(3rem, 12vw, 4.8rem);
+      line-height: .95;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fade .8s ease .25s forwards;
+    }
+    h1 em { font-style: italic; color: var(--brass); }
+    .hero-body > p {
+      color: rgba(244,239,230,.82);
+      max-width: 28rem;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fade .8s ease .4s forwards;
+    }
+    .actions {
+      display: flex; flex-wrap: wrap; gap: .7rem;
+      opacity: 0;
+      animation: fade .8s ease .55s forwards;
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: .85rem 1.15rem;
+      font-weight: 700;
+      font-size: .85rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      border: 0;
+    }
+    .btn-brass { background: var(--brass); color: var(--midnight); }
+    .btn-line { background: transparent; color: var(--ivory); border: 1px solid rgba(244,239,230,.35); }
+    section { padding: 3.25rem 1.25rem; max-width: 900px; margin: 0 auto; }
+    h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2rem, 6vw, 2.8rem);
+      font-weight: 600;
+      margin-bottom: .5rem;
+    }
+    .muted { color: var(--smoke); }
+    .grid {
+      margin-top: 1.75rem;
+      display: grid;
+      gap: 1rem;
+    }
+    @media (min-width: 700px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+    .panel {
+      border-top: 1px solid var(--midnight);
+      padding-top: 1rem;
+    }
+    .panel h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      margin-bottom: .3rem;
+    }
+    .book {
+      background: var(--midnight);
+      color: var(--ivory);
+      padding: 3.25rem 1.25rem;
+    }
+    .book-inner { max-width: 560px; margin: 0 auto; }
+    .book h2 { color: var(--ivory); }
+    .book p { color: rgba(244,239,230,.75); margin-bottom: 1.25rem; }
+    form { display: grid; gap: .7rem; }
+    input, select, textarea {
+      width: 100%;
+      padding: .85rem 1rem;
+      border: 1px solid rgba(244,239,230,.2);
+      background: rgba(255,255,255,.04);
+      color: var(--ivory);
+      font: inherit;
+    }
+    input::placeholder, textarea::placeholder { color: rgba(244,239,230,.45); }
+    option { color: #000; }
+    .details {
+      margin-top: 1.5rem;
+      font-size: .92rem;
+      color: rgba(244,239,230,.75);
+      display: grid;
+      gap: .35rem;
+    }
+    footer {
+      padding: 2rem 1.25rem 3.5rem;
+      text-align: center;
+      color: var(--smoke);
+      font-size: .85rem;
+    }
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes tick {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="mock-badge">Sample mockup</div>
+  <header class="hero">
+    <div class="face" aria-hidden="true"></div>
+    <div class="top">
+      <div class="brand">The Time Traveler</div>
+      <a href="#book">Book repair</a>
+    </div>
+    <div class="hero-body">
+      <p class="eyebrow">Modesto · Est. craft since 1986</p>
+      <h1>Clocks that still <em>deserve</em> to run.</h1>
+      <p>Authorized Howard Miller service. Grandfather, mantel, wall, cuckoo, and antique clocks — appointment only, with a one-year guarantee on complete service.</p>
+      <div class="actions">
+        <a class="btn btn-brass" href="tel:2095271526">(209) 527-1526</a>
+        <a class="btn btn-line" href="#services">Services</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="services">
+    <h2>Precision repair</h2>
+    <p class="muted">In-home appointments for floor clocks. Pickup and delivery available when needed.</p>
+    <div class="grid">
+      <article class="panel">
+        <h3>Floor clocks</h3>
+        <p class="muted">Grandfather and tall-case service at your home.</p>
+      </article>
+      <article class="panel">
+        <h3>Mantel &amp; wall</h3>
+        <p class="muted">Cleaning, oiling, and careful mechanical repair.</p>
+      </article>
+      <article class="panel">
+        <h3>Cuckoo &amp; antique</h3>
+        <p class="muted">Specialty work with a one-year complete-service guarantee.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="book" id="book">
+    <div class="book-inner">
+      <h2>Request an appointment</h2>
+      <p>Office visits are by appointment only, Mon–Fri 7am–7pm. 10% senior discount available by request.</p>
+      <form onsubmit="event.preventDefault(); alert('Sample mockup — connect to phone/email when live.');">
+        <input name="name" placeholder="Your name" required />
+        <input name="phone" type="tel" placeholder="Phone" required />
+        <select name="type" required>
+          <option value="">Clock type</option>
+          <option>Grandfather / floor</option>
+          <option>Mantel</option>
+          <option>Wall</option>
+          <option>Cuckoo</option>
+          <option>Antique / other</option>
+        </select>
+        <textarea name="notes" rows="4" placeholder="What’s wrong with the clock?"></textarea>
+        <button class="btn btn-brass" type="submit">Request appointment</button>
+      </form>
+      <div class="details">
+        <div>2629 Fiedler Way, Modesto, CA 95355</div>
+        <div>(209) 527-1526 · (209) 652-8796</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>The Time Traveler Clock Repair · Sample website mockup for owner review</footer>
+</body>
+</html>

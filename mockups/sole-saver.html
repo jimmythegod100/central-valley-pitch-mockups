@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sole Saver Boot &amp; Shoe Repair — Ceres</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --leather: #3b2418;
+      --tan: #c4a574;
+      --cream: #f7f1e8;
+      --oxblood: #7a2e2e;
+      --smoke: #5c524a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Figtree, system-ui, sans-serif;
+      background: var(--cream);
+      color: var(--leather);
+      line-height: 1.55;
+    }
+    a { color: inherit; text-decoration: none; }
+    .mock-badge {
+      position: fixed; right: .75rem; bottom: .75rem; z-index: 30;
+      background: var(--leather); color: var(--cream);
+      font-size: .65rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; padding: .45rem .65rem;
+      opacity: .9;
+    }
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      background:
+        radial-gradient(ellipse at 20% 20%, rgba(196,165,116,.25), transparent 50%),
+        linear-gradient(160deg, #2a1810 0%, #4a2c1c 45%, #1c120c 100%);
+      color: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      right: -10%;
+      top: 10%;
+      width: min(70vw, 520px);
+      height: min(70vw, 520px);
+      border-radius: 50%;
+      border: 1px solid rgba(196,165,116,.25);
+      animation: spin 48s linear infinite;
+    }
+    .top {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.25rem;
+      position: relative; z-index: 2;
+    }
+    .brand {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+    }
+    .top a {
+      border: 1px solid rgba(247,241,232,.35);
+      padding: .5rem .85rem;
+      font-size: .8rem;
+      font-weight: 600;
+    }
+    .hero-body {
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 2rem 1.25rem 3.5rem;
+      position: relative; z-index: 2;
+      max-width: 40rem;
+    }
+    .years {
+      color: var(--tan);
+      font-weight: 700;
+      font-size: .75rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: .85rem;
+      opacity: 0;
+      animation: up .7s ease .1s forwards;
+    }
+    h1 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(2.6rem, 10vw, 4.2rem);
+      line-height: 1.05;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: up .8s ease .25s forwards;
+    }
+    .hero-body > p {
+      font-size: 1.05rem;
+      color: rgba(247,241,232,.85);
+      margin-bottom: 1.5rem;
+      max-width: 28rem;
+      opacity: 0;
+      animation: up .8s ease .4s forwards;
+    }
+    .actions {
+      display: flex; flex-wrap: wrap; gap: .7rem;
+      opacity: 0;
+      animation: up .8s ease .55s forwards;
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: .85rem 1.15rem;
+      font-weight: 700;
+      font-size: .9rem;
+      border: 0;
+    }
+    .btn-main { background: var(--tan); color: var(--leather); }
+    .btn-line { background: transparent; color: var(--cream); border: 1px solid rgba(247,241,232,.4); }
+    .photo-strip {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: .6rem;
+      padding: 0 1.25rem;
+      margin-top: -2rem;
+      position: relative;
+      z-index: 3;
+    }
+    .photo-strip img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      filter: sepia(.15) contrast(1.05);
+    }
+    @media (min-width: 720px) {
+      .photo-strip { max-width: 900px; margin-left: auto; margin-right: auto; }
+      .photo-strip img { height: 240px; }
+    }
+    section { padding: 3.25rem 1.25rem; max-width: 900px; margin: 0 auto; }
+    h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(1.8rem, 5vw, 2.4rem);
+      margin-bottom: .6rem;
+    }
+    .muted { color: var(--smoke); }
+    .list {
+      margin-top: 1.5rem;
+      display: grid;
+      gap: .85rem;
+    }
+    @media (min-width: 640px) { .list { grid-template-columns: 1fr 1fr; } }
+    .item {
+      border-top: 2px solid var(--leather);
+      padding-top: .85rem;
+    }
+    .item strong {
+      display: block;
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.15rem;
+      margin-bottom: .25rem;
+    }
+    .cta-band {
+      background: var(--oxblood);
+      color: var(--cream);
+      padding: 3rem 1.25rem;
+      text-align: center;
+    }
+    .cta-band h2 { margin-bottom: .5rem; }
+    .cta-band p { margin-bottom: 1.25rem; opacity: .9; }
+    .hours {
+      display: grid;
+      gap: .35rem;
+      max-width: 320px;
+      margin: 1.5rem auto 0;
+      text-align: left;
+      font-size: .95rem;
+    }
+    footer {
+      padding: 2rem 1.25rem 3.5rem;
+      text-align: center;
+      color: var(--smoke);
+      font-size: .85rem;
+    }
+    @keyframes up {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div class="mock-badge">Sample mockup</div>
+  <header class="hero">
+    <div class="top">
+      <div class="brand">Sole Saver</div>
+      <a href="tel:2095311649">Call now</a>
+    </div>
+    <div class="hero-body">
+      <p class="years">30+ years · Ceres / Modesto</p>
+      <h1>Save the boots you already love.</h1>
+      <p>Frank Cardenas repairs shoes, boots, leather purses, and luggage — with over 50 years of craft behind every stitch.</p>
+      <div class="actions">
+        <a class="btn btn-main" href="tel:2095311649">(209) 531-1649</a>
+        <a class="btn btn-line" href="#services">What we fix</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="photo-strip">
+    <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=1000&q=80" alt="Work boots" />
+    <img src="https://images.unsplash.com/photo-1543163521-1a362a9ff0e3?auto=format&fit=crop&w=800&q=80" alt="Leather shoes" />
+  </div>
+
+  <section id="services">
+    <h2>Shop services</h2>
+    <p class="muted">Bring your favorites back to life instead of replacing them.</p>
+    <div class="list">
+      <div class="item"><strong>Boot &amp; shoe repair</strong><span class="muted">Soles, heels, stitching, and reshaping for daily wear.</span></div>
+      <div class="item"><strong>Leather purses</strong><span class="muted">Straps, zippers, and structural fixes that last.</span></div>
+      <div class="item"><strong>Luggage repair</strong><span class="muted">Keep travel bags rolling without buying new.</span></div>
+      <div class="item"><strong>Shoe shining</strong><span class="muted">Classic finish for work, church, and events.</span></div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <h2>Stop by Richland Shopping Center</h2>
+    <p>2531 E. Whitmore Ave, Suite T · Ceres, CA 95307</p>
+    <a class="btn btn-main" href="tel:2095311649">Call (209) 531-1649</a>
+    <div class="hours">
+      <div>Tue–Fri · 9:00 am – 5:30 pm</div>
+      <div>Sat · 9:00 am – 3:00 pm</div>
+      <div>Sun–Mon · Closed</div>
+    </div>
+  </section>
+
+  <footer>
+    Sole Saver Boot &amp; Shoe Repair · Sample website mockup for owner review
+  </footer>
+</body>
+</html>
