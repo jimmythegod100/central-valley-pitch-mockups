@@ -13,7 +13,7 @@ Use with mockups in `mockups/`. **Prices:** see `PRICING.md` · **SMS:** see `SM
 **Gap:** Listed website (`margoslogos.com`) loads an error page.
 
 ### Opener
-> “Hi, is this Margo’s Logos? My name is [Name]. I build websites for Modesto shops. I was looking you up for embroidery and your website address is down — it shows an error. I mocked up a clean replacement with a quote form for teams and logos. Can I text it over, or stop by for five minutes?”
+> “Hi, is this Margo’s Logos? My name is Vince. I build websites for Modesto shops. I was looking you up for embroidery and your website address is down — it shows an error. I mocked up a clean replacement with a quote form for teams and logos. Can I text it over, or stop by for five minutes?”
 
 ### If they say “we’re fine on Facebook”
 > “Totally fair. The difference is Google — when someone searches ‘embroidery Modesto,’ a real site with your phone and a quote button usually beats a Facebook page. I can keep it simple: three services, gallery, call button.”
@@ -36,7 +36,7 @@ Use with mockups in `mockups/`. **Prices:** see `PRICING.md` · **SMS:** see `SM
 **Gap:** 30+ years of reputation, Facebook/directories only.
 
 ### Opener
-> “Hi Frank — [Name] here. I help long-time Central Valley shops get a simple website. Sole Saver’s been in Ceres forever, but online you’re mostly on Facebook. I built a sample page with your hours, services, and a big call button. Mind if I show you on my phone?”
+> “Hi Frank — Vince here. I help long-time Central Valley shops get a simple website. Sole Saver’s been in Ceres forever, but online you’re mostly on Facebook. I built a sample page with your hours, services, and a big call button. Mind if I show you on my phone?”
 
 ### Value line
 > “People still Google ‘shoe repair near me’ before they drive. A one-page site puts your hours and address where Google can show them — without you posting every day.”
@@ -58,7 +58,7 @@ Use with mockups in `mockups/`. **Prices:** see `PRICING.md` · **SMS:** see `SM
 **Gap:** Bulletin listing; domain parks instead of a real site.
 
 ### Opener
-> “Hi, I’m [Name] — I make websites for Manteca home-service guys. Diego’s shows up in the Bulletin, but when I checked the web side there’s no real site working — just a parked page. I mocked up a mobile page with cleanups, mowing, sprinklers, and a free-estimate form. Can I send you the link?”
+> “Hi, I’m Vince — I make websites for Manteca home-service guys. Diego’s shows up in the Bulletin, but when I checked the web side there’s no real site working — just a parked page. I mocked up a mobile page with cleanups, mowing, sprinklers, and a free-estimate form. Can I send you the link?”
 
 ### Value line
 > “Most of your customers call from their phone in the driveway. One tap to call and a form for estimates beats hoping they find the Bulletin. One booked job usually covers the site.”
@@ -79,7 +79,7 @@ Use with mockups in `mockups/`. **Prices:** see `PRICING.md` · **SMS:** see `SM
 **Gap:** No website; same number as Bruce’s Plumbing.
 
 ### Opener
-> “Hi, is this Bruce’s Handyman? I’m [Name]. I noticed you’re in the Manteca Bulletin but don’t have a website. I put together a sample that lists the common jobs — mounting, outlets, punch lists — with your Grant Ave number front and center. Got 30 seconds to look?”
+> “Hi, is this Bruce’s Handyman? I’m Vince. I noticed you’re in the Manteca Bulletin but don’t have a website. I put together a sample that lists the common jobs — mounting, outlets, punch lists — with your Grant Ave number front and center. Got 30 seconds to look?”
 
 ### Bundle line (say this first on price)
 > “I also mocked a plumbing page for the same number. Two separate sites would run about **$1,900**. One brand with Handyman + Plumbing is **$1,497**. Most owners want the bundle.”
@@ -99,7 +99,7 @@ Use with mockups in `mockups/`. **Prices:** see `PRICING.md` · **SMS:** see `SM
 **Gap:** No website; license + since 1992 unused online.
 
 ### Opener
-> “Hi — [Name] here. I build sites for local plumbers. Bruce’s has the license number and ‘since 1992’ story, but nothing online that shows it. I mocked a page with drain cleaning, your license badge, and a big call button for Manteca-only service. Want me to show you?”
+> “Hi — Vince here. I build sites for local plumbers. Bruce’s has the license number and ‘since 1992’ story, but nothing online that shows it. I mocked a page with drain cleaning, your license badge, and a big call button for Manteca-only service. Want me to show you?”
 
 ### Value line
 > “When someone’s sink is backed up, they don’t browse Facebook — they Google and tap Call. Your license and years in business should be on that page.”
@@ -120,7 +120,7 @@ Use with mockups in `mockups/`. **Prices:** see `PRICING.md` · **SMS:** see `SM
 **Gap:** Appointment-only specialist; directories/Yelp only.
 
 ### Opener
-> “Hi, is this The Time Traveler? I’m [Name]. I help specialty Modesto businesses get a simple booking site. You’re an authorized Howard Miller service center, but online there’s no place to request an appointment. I mocked a page with clock types, senior discount, and an appointment form. May I show you on my phone?”
+> “Hi, is this The Time Traveler? I’m Vince. I help specialty Modesto businesses get a simple booking site. You’re an authorized Howard Miller service center, but online there’s no place to request an appointment. I mocked a page with clock types, senior discount, and an appointment form. May I show you on my phone?”
 
 ### Value line
 > “Grandfather-clock customers plan ahead. A form that captures ‘floor clock, needs visit’ saves you phone tag and looks more professional than a bare listing.”

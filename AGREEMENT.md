@@ -24,8 +24,10 @@ Use after they agree on price. Keep it short.
 
 Client: ______________________ Date: __________  
 
-Builder: ______________________ Date: __________  
+Builder: **Vince Remedia Works** Date: __________  
 
 ---
 
+**Vince Remedia Works**  
+(209) 315-5702 · vinceremediaworks@gmail.com  
 Venmo / Zelle / invoice: _________________________________
