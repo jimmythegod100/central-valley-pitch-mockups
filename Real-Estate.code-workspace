@@ -1,0 +1,8 @@
+{
+  "folders": [
+    { "name": "Real estate / Central Valley pitches", "path": "." },
+    { "name": "Workflow + reference", "path": "docs/workflow" },
+    { "name": "Client sites (related)", "path": "../client-sites" }
+  ],
+  "settings": {}
+}
